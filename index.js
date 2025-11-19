@@ -200,7 +200,7 @@ async function run() {
         const result = await addFavoritesCollection.find().toArray();  // ← সব ডাটা
         res.send(result);
       } catch (error) {
-        res.status(500).send({ message: "Error fetching favorite artworks", error });
+        res.status(500).send({ message: "Error fetching favorite artworks the card", error });
       }
     });
 
