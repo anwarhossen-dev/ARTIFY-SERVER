@@ -132,11 +132,11 @@ async function run() {
         const { userEmail } = req.body;
         const id = req.params.id;
 
-        if (!userEmail) return res.status(400).send({ error: "User email is required" });
+        if (!userEmail) return res.status(400).send({ error: "User email is the  required" });
 
         const filter = { _id: new ObjectId(id) };
         const artwork = await addArtworkCollection.findOne(filter);
-        if (!artwork) return res.status(404).send({ error: "Artwork not found" });
+        if (!artwork) return res.status(404).send({ error: "Artwork is not found" });
 
         let update;
         if (artwork.likedBy?.includes(userEmail)) {
