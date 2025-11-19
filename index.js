@@ -28,7 +28,7 @@ const client = new MongoClient(uri, {
 
 async function run() {
   try {
-    await client.connect();
+    // await client.connect();
 
     const db = client.db('ARTIFYDB');
     const addArtworkCollection = db.collection('addArtwork');
@@ -59,10 +59,10 @@ async function run() {
       }
     });
 
-    // app.get("/addArtwork", async (req, res) => {
-    //   const result = await addArtworkCollection.find().toArray();
-    //   res.send(result);
-    // });
+    app.get("/home", async (req, res) => {
+      const result = await addArtworkCollection.find().toArray();
+      res.send(result);
+    });
 
     // ----------------- GET ALL ARTWORK -----------------
     app.get("/addArtwork", async (req, res) => {
@@ -400,7 +400,7 @@ async function run() {
     console.log(error);
   }
 
-  await client.db("admin").command({ ping: 1 });
+  // await client.db("admin").command({ ping: 1 });
   console.log("Pinged your deployment. You successfully connected to MongoDB!");
 }
 
