@@ -300,7 +300,7 @@ async function run() {
     // });
 
 
-    // // ----------------- MY GALLERY -----------------
+    //  ----------------- MY GALLERY -----------------
     // app.get('/my-gallery', async (req, res) => {
     //   const email = req.query.email;
     //   const result = await addArtworkCollection.find({ email }).toArray();
