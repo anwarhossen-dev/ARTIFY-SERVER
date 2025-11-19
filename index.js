@@ -199,7 +199,7 @@ async function run() {
     // });
     app.get('/my-favoriteArt', async (req, res) => {
       try {
-        const result = await addFavoritesCollection.find().toArray();  // ← সব ডাটা
+        const result = await addFavoritesCollection.find({ favorite_by: email }).toArray();  
         res.send(result);
       } catch (error) {
         res.status(500).send({ message: "Error fetching favorite artworks the card", error });
