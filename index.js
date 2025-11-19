@@ -170,7 +170,7 @@ async function run() {
 
       } catch (err) {
         console.error(err);
-        res.status(500).send({ error: "Insert failed" });
+        res.status(500).send({ error: "Insert failed the crud" });
       }
     });
 
