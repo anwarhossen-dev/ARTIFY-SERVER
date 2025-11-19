@@ -96,7 +96,7 @@ async function run() {
     //   res.send(result);
     // });
 
-    // ----------------- GET LATEST ARTWORK -----------------
+    // ----------------- GET LATEST ARTWORK  APi -----------------
     app.get('/latest-addArtwork', async (req, res) => {
       const result = await addArtworkCollection.find().sort({ createdAt: -1 }).limit(6).toArray();
       res.send(result);
